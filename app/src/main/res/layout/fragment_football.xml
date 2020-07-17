@@ -36,7 +36,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/logoa" />
     <!--    <androidx.core.widget.ContentLoadingProgressBar-->
-
     <!--        android:id="@+id/pb"-->
     <!--        style="@style/Widget.AppCompat.ProgressBar"-->
     <!--        android:layout_width="wrap_content"-->

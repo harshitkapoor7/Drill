@@ -33,7 +33,6 @@ import static java.lang.Math.min;
 
 public class FootballFragment extends Fragment {
     ProgressBar pb;
-
     ArrayList<f_matchlive>fls=new ArrayList<>();
     RecyclerView rv;
     @Nullable
