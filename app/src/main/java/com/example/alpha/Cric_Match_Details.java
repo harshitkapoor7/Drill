@@ -14,6 +14,7 @@ import java.io.Serializable;
 
 public class Cric_Match_Details extends AppCompatActivity implements Serializable {
     Match match;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

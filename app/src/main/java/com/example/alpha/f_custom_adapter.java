@@ -25,12 +25,12 @@ public class f_custom_adapter extends RecyclerView.Adapter<f_custom_adapter.MyVi
             textView = (TextView) view.findViewById(R.id.team1);
             textView1 = (TextView) view.findViewById(R.id.team2);
             textView2 = (TextView) view.findViewById(R.id.score);
-            textView3 = (TextView) view.findViewById(R.id.possession);
-            textView4 = (TextView) view.findViewById(R.id.fauls);
-            textView5 = (TextView) view.findViewById(R.id.corners);
-            textView6 = (TextView) view.findViewById(R.id.redc);
-            textView7 = (TextView) view.findViewById(R.id.yellowc);
-            textView8 = (TextView) view.findViewById(R.id.penalty);
+//            textView3 = (TextView) view.findViewById(R.id.possession);
+//            textView4 = (TextView) view.findViewById(R.id.fauls);
+//            textView5 = (TextView) view.findViewById(R.id.corners);
+//            textView6 = (TextView) view.findViewById(R.id.redc);
+//            textView7 = (TextView) view.findViewById(R.id.yellowc);
+//            textView8 = (TextView) view.findViewById(R.id.penalty);
 
 
 
@@ -56,37 +56,37 @@ public class f_custom_adapter extends RecyclerView.Adapter<f_custom_adapter.MyVi
         holder.textView.setText(list.get(position).local_team_name);
         holder.textView1.setText(list.get(position).visitor_team_name);
         holder.textView2.setText(list.get(position).full_time);
-        holder.textView3.setText(list.get(position).possession);
-        holder.textView4.setText(list.get(position).fauls);
-        holder.textView5.setText(list.get(position).corner);
-        holder.textView6.setText(list.get(position).red);
-        holder.textView7.setText(list.get(position).yellow);
-        holder.textView8.setText(list.get(position).penalty);
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if(holder.textView4.getVisibility()==View.GONE)
-                {holder.textView4.setVisibility(View.VISIBLE);
-                holder.textView5.setVisibility(View.VISIBLE);
-                holder.textView6.setVisibility(View.VISIBLE);
-                holder.textView7.setVisibility(View.VISIBLE);
-                holder.textView8.setVisibility(View.VISIBLE);
-                holder.textView3.setVisibility(View.VISIBLE);
-            }
-                else
-                {
-                    {holder.textView4.setVisibility(View.GONE);
-                        holder.textView5.setVisibility(View.GONE);
-                        holder.textView6.setVisibility(View.GONE);
-                        holder.textView7.setVisibility(View.GONE);
-                        holder.textView8.setVisibility(View.GONE);
-                        holder.textView3.setVisibility(View.GONE);
-                    }
-
-
-                }
-            }
-        });
+//        holder.textView3.setText(list.get(position).possession);
+//        holder.textView4.setText(list.get(position).fauls);
+//        holder.textView5.setText(list.get(position).corner);
+//        holder.textView6.setText(list.get(position).red);
+//        holder.textView7.setText(list.get(position).yellow);
+//        holder.textView8.setText(list.get(position).penalty);
+//        holder.itemView.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                if(holder.textView4.getVisibility()==View.GONE)
+//                {holder.textView4.setVisibility(View.VISIBLE);
+//                holder.textView5.setVisibility(View.VISIBLE);
+//                holder.textView6.setVisibility(View.VISIBLE);
+//                holder.textView7.setVisibility(View.VISIBLE);
+//                holder.textView8.setVisibility(View.VISIBLE);
+//                holder.textView3.setVisibility(View.VISIBLE);
+//            }
+//                else
+//                {
+//                    {holder.textView4.setVisibility(View.GONE);
+//                        holder.textView5.setVisibility(View.GONE);
+//                        holder.textView6.setVisibility(View.GONE);
+//                        holder.textView7.setVisibility(View.GONE);
+//                        holder.textView8.setVisibility(View.GONE);
+//                        holder.textView3.setVisibility(View.GONE);
+//                    }
+//
+//
+//                }
+//            }
+//        });
 
 
     }

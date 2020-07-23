@@ -34,6 +34,12 @@ public class f_matchlive {
         this.fauls=fauls;
     }
 
+    public f_matchlive(String local_team_name, String visitor_team_name, String full_time) {
+        this.local_team_name = local_team_name;
+        this.visitor_team_name = visitor_team_name;
+        this.full_time = full_time;
+    }
+
     public int getId() {
         return id;
     }
