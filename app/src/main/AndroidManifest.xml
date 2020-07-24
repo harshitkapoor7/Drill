@@ -12,13 +12,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar"
         android:usesCleartextTraffic="true">
-        <activity android:name=".fixtures"
-            ></activity>
+        <activity android:name=".NewsDetailActivity"></activity>
+        <activity android:name=".fixtures" />
         <activity android:name=".Cric_Match_Details" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <action android:name="android.intent.action.VIEW" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

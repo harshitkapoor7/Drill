@@ -1,6 +1,7 @@
 package com.example.alpha;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -77,6 +78,7 @@ public class NewsFragment extends Fragment implements SwipeRefreshLayout.OnRefre
                     adapter = new Adapter(articles, getActivity().getApplicationContext());
                     recyclerView.setAdapter(adapter);
                     adapter.notifyDataSetChanged();
+                    initListener();
 //                    progressDialog.hide();
                     swipeRefreshLayout.setRefreshing(false);
                 } else {
@@ -93,7 +95,27 @@ public class NewsFragment extends Fragment implements SwipeRefreshLayout.OnRefre
             }
         });
     }
+     private  void initListener(){
+        adapter.setOnItemClickListener(new Adapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(View view, int position) {
+                Intent intent= new Intent();
+                intent.setClass(getContext(),NewsDetailActivity.class);
+                Article article=articles.get(position);
+                intent.putExtra("url",article.getUrl());
+                intent.putExtra("title",article.getTitle());
+                intent.putExtra("img",article.getUrlToImage());
+                intent.putExtra("date",article.getPublishedAt());
+                intent.putExtra("source",article.getSource().getName());
+                intent.putExtra("author",article.getAuthor());
+                startActivity(intent);
 
+
+
+
+            }
+        });
+     }
     @Override
     public void onRefresh() {
         LoadJson();
