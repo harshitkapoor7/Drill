@@ -32,10 +32,9 @@ public class CricInfo_Fragment extends Fragment implements Serializable {
     TextView tname1,tname2;
     ListView lv,lvt1,lvt2;
     String t1="",t2="";
-//    String[] squad1=new String[25];
-    ArrayList<String> squad1=new ArrayList<>();
+    ArrayList<String> squad1;
 
-    ArrayList<String> squad2=new ArrayList<>();
+    ArrayList<String> squad2;
     CardView c1,c2;
     String des1="Match Description: ", series1="Series: ", toss1="Toss: ", stadium1="Stadium: ", venue1="City: ", umpires1="Umpires: ", thirdumpire1="Third Umpire: ", refree1="Refree: ";
   //jbhvhbbfhb
@@ -51,6 +50,8 @@ public class CricInfo_Fragment extends Fragment implements Serializable {
         c1=view.findViewById(R.id.cd1);
         c2=view.findViewById(R.id.cd2);
         tname2=view.findViewById(R.id.name2);
+        squad1=new ArrayList<>();
+        squad2=new ArrayList<>();
         data_fetcher(" ");
         return view;
 
@@ -67,11 +68,12 @@ public class CricInfo_Fragment extends Fragment implements Serializable {
                 if(lvt1.getVisibility()==View.GONE)
                 {
                     lvt1.setVisibility(View.VISIBLE);
+                    tname1.setCompoundDrawablesWithIntrinsicBounds(0,0,R.drawable.ic_up,0);
                 }
                 else
                 {
                     lvt1.setVisibility(View.GONE);
-//                    tname1.setVisibility(View.VISIBLE);
+                    tname1.setCompoundDrawablesWithIntrinsicBounds(0,0,R.drawable.ic_down,0);
                 }
             }
         });
@@ -83,12 +85,12 @@ public class CricInfo_Fragment extends Fragment implements Serializable {
                 if(lvt2.getVisibility()==View.GONE)
                 {
                     lvt2.setVisibility(View.VISIBLE);
-//                    tname2.setVisibility(View.GONE);
+                    tname2.setCompoundDrawablesWithIntrinsicBounds(0,0,R.drawable.ic_up,0);
                 }
                 else
                 {
                     lvt2.setVisibility(View.GONE);
-//                    tname2.setVisibility(View.VISIBLE);
+                    tname2.setCompoundDrawablesWithIntrinsicBounds(0,0,R.drawable.ic_down,0);
                 }
 
 
@@ -202,7 +204,7 @@ public class CricInfo_Fragment extends Fragment implements Serializable {
                 details[7]=(refree1);
                 tname1.setText(t1);
                 tname2.setText(t2);
-                ArrayAdapter<String> adapter=new ArrayAdapter<String>(getContext(),R.layout.row,R.id.row,details);
+                ArrayAdapter<String> adapter=new ArrayAdapter<String>(getContext(),R.layout.row1,R.id.row1,details);
 
                 ArrayAdapter<String> adapter1=new ArrayAdapter<String>(getContext(),R.layout.row,R.id.row,squad1);
                 ArrayAdapter<String> adapter2=new ArrayAdapter<String>(getContext(),R.layout.row,R.id.row,squad2);
@@ -210,11 +212,14 @@ public class CricInfo_Fragment extends Fragment implements Serializable {
                 lvt1.setAdapter(adapter1);
                 lvt2.setAdapter(adapter2);
 
+
 //                view.setVisibility(View.GONE);
             }
         }
         data_fetch data_fetch = new data_fetch();
         data_fetch.execute();
+        squad1.clear();
+        squad2.clear();
     }
 
 

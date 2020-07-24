@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 
 import androidx.annotation.NonNull;
@@ -17,6 +18,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.PagerSnapHelper;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.SnapHelper;
+
+import com.blongho.country_data.World;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -44,21 +47,20 @@ public class CricketFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.main_page, container, false);
+        World.init(getContext());
         progressBar = view.findViewById(R.id.progress);
         data_fetcher("https://mapps/cricbuzz.com/match/livematches", progressBar);
-
         return view;
     }
 
     RecyclerView recyclerView;
-
-    TreeMap<Integer, String[]> map = new TreeMap<>();
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
         recyclerView = (RecyclerView) view.findViewById(R.id.recyclerView);
+
 
         LinearLayoutManager RecyclerViewLayoutManager = new LinearLayoutManager(getActivity().getApplicationContext());
         recyclerView.setLayoutManager(RecyclerViewLayoutManager);
@@ -68,11 +70,7 @@ public class CricketFragment extends Fragment {
         linearSnapHelper.attachToRecyclerView(recyclerView);
 
     }
-    public void pass_data(int x)
-    {
-        Intent i=new Intent(getContext(),Cric_Match_Details.class);
-        startActivity(i);
-    }
+
 
     private void data_fetcher(final String url, final View view) {
 
@@ -106,8 +104,8 @@ public class CricketFragment extends Fragment {
                     i++;
                     String t2 = str.substring(i);
 //                    System.out.println(t1);
-  //                  System.out.println(t2);
-                    cls.add(new Cricket_live_scores(t1, t2, m.getStatus(),m));
+                    //                  System.out.println(t2);
+                    cls.add(new Cricket_live_scores(t1, t2, m.getStatus(), m));
                 }
 
                 return null;

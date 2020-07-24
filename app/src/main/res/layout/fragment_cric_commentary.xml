@@ -11,8 +11,6 @@
         android:id="@+id/cardView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-
-        android:padding="20sp"
         app:cardCornerRadius="27sp"
         app:layout_constraintBottom_toTopOf="@+id/scroll"
         app:layout_constraintEnd_toEndOf="parent"
@@ -23,7 +21,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="20sp"
+            android:layout_margin="8sp"
+            android:padding="4dp"
             android:orientation="vertical">
 
             <LinearLayout
@@ -35,6 +34,8 @@
                     android:id="@+id/Status"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:textColor="#87ceeb"
+                    android:fontFamily="@font/mm"
                     android:layout_column="1"
                     android:layout_weight="1"
                     android:text="Status" />
@@ -43,7 +44,9 @@
                     android:id="@+id/Partnership"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/mbold"
                     android:layout_column="2"
+                    android:textColor="#000"
                     android:layout_weight="1"
                     android:gravity="right"
                     android:text="PS" />
@@ -53,21 +56,25 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
                 android:orientation="horizontal">
 
                 <TextView
                     android:id="@+id/Score"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
+                    android:fontFamily="@font/mm"
+                    android:textColor="#000"
+                    android:layout_weight="4.5"
                     android:text="Score" />
 
                 <TextView
                     android:id="@+id/Crr"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_column="2"
+                    android:fontFamily="@font/mbold"
                     android:gravity="right"
+                    android:textColor="#000"
                     android:layout_weight="1"
                     android:text="CRR" />
             </LinearLayout>
@@ -103,6 +110,7 @@
                         android:id="@+id/Batsmen"
                         android:layout_width="wrap_content"
                         android:layout_height="fill_parent"
+                        android:textColor="#000"
                         android:layout_column="1"
                         android:layout_weight="1"
                         android:text="Batsmen" />
@@ -110,6 +118,7 @@
                     <TextView
                         android:layout_width="30dp"
                         android:layout_height="fill_parent"
+                        android:textColor="#000"
                         android:layout_column="2"
                         android:layout_weight="1"
                         android:text="R" />
@@ -117,6 +126,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="fill_parent"
+                        android:textColor="#000"
                         android:layout_column="1"
                         android:layout_weight="1"
                         android:text="B" />
@@ -124,6 +134,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="fill_parent"
+                        android:textColor="#000"
                         android:layout_column="1"
                         android:layout_weight="1"
                         android:text="6's" />
@@ -133,11 +144,13 @@
                         android:layout_height="fill_parent"
                         android:layout_column="1"
                         android:layout_weight="1"
+                        android:textColor="#000"
                         android:text="4's" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="fill_parent"
+                        android:textColor="#000"
                         android:layout_column="1"
                         android:layout_weight="1"
                         android:text="SR" />
@@ -154,6 +167,7 @@
                     <TextView
                         android:id="@+id/Batsman1"
                         android:layout_width="80dp"
+                        android:textColor="#ffa500"
                         android:layout_height="fill_parent"
                         android:layout_column="1"
                         android:layout_weight="1"
@@ -162,7 +176,8 @@
                     <TextView
                         android:id="@+id/runs1"
                         android:layout_width="wrap_content"
-                        android:layout_height="fill_parent"
+                        android:layout_height="match_parent"
+                        android:textColor="#87ceeb"
                         android:layout_column="2"
                         android:layout_weight="1"
                         android:text="Runs1" />
@@ -171,6 +186,7 @@
                         android:id="@+id/balls1"
                         android:layout_width="wrap_content"
                         android:layout_height="fill_parent"
+                        android:textColor="#87ceeb"
                         android:layout_column="1"
                         android:layout_weight="1"
                         android:text="Balls1" />
@@ -179,6 +195,7 @@
                         android:id="@+id/six1"
                         android:layout_width="wrap_content"
                         android:layout_height="fill_parent"
+                        android:textColor="#87ceeb"
                         android:layout_column="1"
                         android:layout_weight="1"
                         android:text="6's" />
@@ -187,6 +204,7 @@
                         android:id="@+id/four1"
                         android:layout_width="wrap_content"
                         android:layout_height="fill_parent"
+                        android:textColor="#87ceeb"
                         android:layout_column="1"
                         android:layout_weight="1"
                         android:text="4's" />
@@ -195,6 +213,7 @@
                         android:id="@+id/sr1"
                         android:layout_width="wrap_content"
                         android:layout_height="fill_parent"
+                        android:textColor="#87ceeb"
                         android:layout_column="1"
                         android:layout_weight="1"
                         android:text="SR1" />
@@ -212,6 +231,7 @@
                         android:id="@+id/Batsmen2"
                         android:layout_width="wrap_content"
                         android:layout_height="fill_parent"
+                        android:textColor="#ffa500"
                         android:layout_column="1"
                         android:layout_weight="1" />
 
@@ -219,6 +239,7 @@
                         android:id="@+id/runs2"
                         android:layout_width="wrap_content"
                         android:layout_height="fill_parent"
+                        android:textColor="#87ceeb"
                         android:layout_column="2"
                         android:layout_weight="1" />
 
@@ -226,6 +247,7 @@
                         android:id="@+id/balls2"
                         android:layout_width="wrap_content"
                         android:layout_height="fill_parent"
+                        android:textColor="#87ceeb"
                         android:layout_column="1"
                         android:layout_weight="1" />
 
@@ -233,6 +255,7 @@
                         android:id="@+id/six2"
                         android:layout_width="wrap_content"
                         android:layout_height="fill_parent"
+                        android:textColor="#87ceeb"
                         android:layout_column="1"
                         android:layout_weight="1" />
 
@@ -240,6 +263,7 @@
                         android:id="@+id/four2"
                         android:layout_width="wrap_content"
                         android:layout_height="fill_parent"
+                        android:textColor="#87ceeb"
                         android:layout_column="1"
                         android:layout_weight="1" />
 
@@ -247,6 +271,7 @@
                         android:id="@+id/sr2"
                         android:layout_width="wrap_content"
                         android:layout_height="fill_parent"
+                        android:textColor="#87ceeb"
                         android:layout_column="1"
                         android:layout_weight="1" />
 
@@ -270,6 +295,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="fill_parent"
                         android:layout_column="1"
+                        android:textColor="#000"
                         android:layout_weight="1"
                         android:text="Bowler" />
 
@@ -278,12 +304,14 @@
                         android:layout_width="wrap_content"
                         android:layout_height="fill_parent"
                         android:layout_column="2"
+                        android:textColor="#000"
                         android:layout_weight="1"
                         android:text="O" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="fill_parent"
+                        android:textColor="#000"
                         android:layout_column="1"
                         android:layout_weight="1"
                         android:text="M" />
@@ -291,6 +319,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="fill_parent"
+                        android:textColor="#000"
                         android:layout_column="1"
                         android:layout_weight="1"
                         android:text="R" />
@@ -298,6 +327,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="fill_parent"
+                        android:textColor="#000"
                         android:layout_column="1"
                         android:layout_weight="1"
                         android:text="W" />
@@ -305,6 +335,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="fill_parent"
+                        android:textColor="#000"
                         android:layout_column="1"
                         android:layout_weight="1"
                         android:text="ER" />
@@ -320,6 +351,7 @@
 
                     <TextView
                         android:id="@+id/Bowler"
+                        android:textColor="#ffa500"
                         android:layout_width="wrap_content"
                         android:layout_height="fill_parent"
                         android:layout_column="1"
@@ -330,6 +362,7 @@
                         android:id="@+id/overs"
                         android:layout_width="wrap_content"
                         android:layout_height="fill_parent"
+                        android:textColor="#87ceeb"
                         android:layout_column="2"
                         android:layout_weight="1"
                         android:text="Runs" />
@@ -338,6 +371,7 @@
                         android:id="@+id/maidens"
                         android:layout_width="wrap_content"
                         android:layout_height="fill_parent"
+                        android:textColor="#87ceeb"
                         android:layout_column="1"
                         android:layout_weight="1"
                         android:text="Balls" />
@@ -346,6 +380,7 @@
                         android:id="@+id/bruns"
                         android:layout_width="wrap_content"
                         android:layout_height="fill_parent"
+                        android:textColor="#87ceeb"
                         android:layout_column="1"
                         android:layout_weight="1"
                         android:text="6's" />
@@ -354,6 +389,7 @@
                         android:id="@+id/wickets"
                         android:layout_width="wrap_content"
                         android:layout_height="fill_parent"
+                        android:textColor="#87ceeb"
                         android:layout_column="1"
                         android:layout_weight="1"
                         android:text="4's" />
@@ -362,6 +398,7 @@
                         android:id="@+id/er1"
                         android:layout_width="wrap_content"
                         android:layout_height="fill_parent"
+                        android:textColor="#87ceeb"
                         android:layout_column="1"
                         android:layout_weight="1"
                         android:text="ER1" />
@@ -389,7 +426,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:lineSpacingExtra="1.5dp"
-            android:textColor="#FFFFFF"
+            android:textColor="#000"
             android:textSize="14dp"></TextView>
     </ScrollView>
 

@@ -1,5 +1,6 @@
 package com.example.alpha;
 
+import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -32,6 +33,7 @@ public class NewsFragment extends Fragment {
     private List<Article> articles  = new ArrayList<>();
     private Adapter adapter;
     private String TAG=NewsFragment.class.getSimpleName();
+    ProgressDialog progressDialog;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -45,6 +47,9 @@ public class NewsFragment extends Fragment {
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setNestedScrollingEnabled(false);
+        progressDialog=new ProgressDialog(getContext());
+        progressDialog.setMessage("Loading...");
+        progressDialog.show();
         LoadJson();
     }
     public void LoadJson()
@@ -65,8 +70,10 @@ public class NewsFragment extends Fragment {
                  adapter=new Adapter(articles,getActivity().getApplicationContext());
                  recyclerView.setAdapter(adapter);
                  adapter.notifyDataSetChanged();
+                     progressDialog.hide();
                  }
                  else{
+                     progressDialog.hide();
 //                     Toast.makeText(getContext().getApplicationContext(),"NO RESULT", Integer.parseInt("SHORT")).show();
                  }
             }

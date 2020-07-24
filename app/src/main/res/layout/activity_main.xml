@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FF9101"
+    android:background="@drawable/ic_userinterface"
     tools:context=".MainActivity">
 
     <FrameLayout
@@ -18,7 +18,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:background="#FFFFFF"
+        android:background="#87ceeb"
+        android:elevation="8dp"
+        app:itemTextColor="#fff"
         app:menu="@menu/bottom_nav" />
 
 

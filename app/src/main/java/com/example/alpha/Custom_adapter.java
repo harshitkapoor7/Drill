@@ -6,9 +6,12 @@ import android.os.Parcelable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.blongho.country_data.World;
 
 import java.io.Serializable;
 import java.util.List;
@@ -44,6 +47,7 @@ public class Custom_adapter extends RecyclerView.Adapter<Custom_adapter.MyView> 
     public class MyView extends RecyclerView.ViewHolder {
 
         public TextView textView, textView1, textView2;
+
 
         public MyView(View view) {
             super(view);
