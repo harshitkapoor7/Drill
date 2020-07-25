@@ -7,407 +7,415 @@
     android:orientation="vertical"
     android:padding="20sp">
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardView"
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefreshCommentary"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:cardCornerRadius="27sp"
-        app:layout_constraintBottom_toTopOf="@+id/scroll"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_height="220dp"
+        tools:ignore="MissingConstraints">
 
-        <LinearLayout
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="8sp"
-            android:padding="4dp"
-            android:orientation="vertical">
+            app:cardCornerRadius="27sp"
+            app:layout_constraintBottom_toTopOf="@+id/scroll"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:layout_margin="8sp"
+                android:orientation="vertical"
+                android:padding="4dp">
 
-                <TextView
-                    android:id="@+id/Status"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:textColor="#87ceeb"
-                    android:fontFamily="@font/mm"
-                    android:layout_column="1"
-                    android:layout_weight="1"
-                    android:text="Status" />
-
-                <TextView
-                    android:id="@+id/Partnership"
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/mbold"
-                    android:layout_column="2"
-                    android:textColor="#000"
-                    android:layout_weight="1"
-                    android:gravity="right"
-                    android:text="PS" />
-            </LinearLayout>
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="7dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/Score"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/mm"
-                    android:textColor="#000"
-                    android:layout_weight="4.5"
-                    android:text="Score" />
-
-                <TextView
-                    android:id="@+id/Crr"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/mbold"
-                    android:gravity="right"
-                    android:textColor="#000"
-                    android:layout_weight="1"
-                    android:text="CRR" />
-            </LinearLayout>
-
-            <TableLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <TableRow
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:paddingLeft="4dp"
-                    android:paddingRight="8dp"
-                    android:stretchColumns="1">
-
-                </TableRow>
-
-                <TableRow android:layout_width="0dp">
-
-                    <TextView>
-
-                    </TextView>
-                </TableRow>
-
-                <TableRow
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:paddingLeft="4dp"
-                    android:paddingRight="8dp"
-                    android:stretchColumns="1">
+                    android:orientation="horizontal">
 
                     <TextView
-                        android:id="@+id/Batsmen"
-                        android:layout_width="wrap_content"
-                        android:layout_height="fill_parent"
-                        android:textColor="#000"
-                        android:layout_column="1"
-                        android:layout_weight="1"
-                        android:text="Batsmen" />
-
-                    <TextView
-                        android:layout_width="30dp"
-                        android:layout_height="fill_parent"
-                        android:textColor="#000"
-                        android:layout_column="2"
-                        android:layout_weight="1"
-                        android:text="R" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="fill_parent"
-                        android:textColor="#000"
-                        android:layout_column="1"
-                        android:layout_weight="1"
-                        android:text="B" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="fill_parent"
-                        android:textColor="#000"
-                        android:layout_column="1"
-                        android:layout_weight="1"
-                        android:text="6's" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="fill_parent"
-                        android:layout_column="1"
-                        android:layout_weight="1"
-                        android:textColor="#000"
-                        android:text="4's" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="fill_parent"
-                        android:textColor="#000"
-                        android:layout_column="1"
-                        android:layout_weight="1"
-                        android:text="SR" />
-
-                </TableRow>
-
-                <TableRow
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:paddingLeft="4dp"
-                    android:paddingRight="4dp"
-                    android:stretchColumns="1">
-
-                    <TextView
-                        android:id="@+id/Batsman1"
-                        android:layout_width="80dp"
-                        android:textColor="#ffa500"
-                        android:layout_height="fill_parent"
-                        android:layout_column="1"
-                        android:layout_weight="1"
-                        android:text="Batsmen1" />
-
-                    <TextView
-                        android:id="@+id/runs1"
-                        android:layout_width="wrap_content"
+                        android:id="@+id/Status"
+                        android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:textColor="#87ceeb"
+                        android:layout_column="1"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/mm"
+                        android:text="Status"
+                        android:textColor="#87ceeb" />
+
+                    <TextView
+                        android:id="@+id/Partnership"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
                         android:layout_column="2"
                         android:layout_weight="1"
-                        android:text="Runs1" />
+                        android:fontFamily="@font/mbold"
+                        android:gravity="right"
+                        android:text="PS"
+                        android:textColor="#000" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
+                    android:orientation="horizontal">
 
                     <TextView
-                        android:id="@+id/balls1"
+                        android:id="@+id/Score"
                         android:layout_width="wrap_content"
-                        android:layout_height="fill_parent"
-                        android:textColor="#87ceeb"
-                        android:layout_column="1"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4.5"
+                        android:fontFamily="@font/mm"
+                        android:text="Score"
+                        android:textColor="#000" />
+
+                    <TextView
+                        android:id="@+id/Crr"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="Balls1" />
+                        android:fontFamily="@font/mbold"
+                        android:gravity="right"
+                        android:text="CRR"
+                        android:textColor="#000" />
+                </LinearLayout>
 
-                    <TextView
-                        android:id="@+id/six1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="fill_parent"
-                        android:textColor="#87ceeb"
-                        android:layout_column="1"
-                        android:layout_weight="1"
-                        android:text="6's" />
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
 
-                    <TextView
-                        android:id="@+id/four1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="fill_parent"
-                        android:textColor="#87ceeb"
-                        android:layout_column="1"
-                        android:layout_weight="1"
-                        android:text="4's" />
+                    <TableRow
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:paddingLeft="4dp"
+                        android:paddingRight="8dp"
+                        android:stretchColumns="1">
 
-                    <TextView
-                        android:id="@+id/sr1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="fill_parent"
-                        android:textColor="#87ceeb"
-                        android:layout_column="1"
-                        android:layout_weight="1"
-                        android:text="SR1" />
+                    </TableRow>
 
-                </TableRow>
+                    <TableRow android:layout_width="0dp">
 
-                <TableRow
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:paddingLeft="4dp"
-                    android:paddingRight="4dp"
-                    android:stretchColumns="1">
+                        <TextView>
 
-                    <TextView
-                        android:id="@+id/Batsmen2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="fill_parent"
-                        android:textColor="#ffa500"
-                        android:layout_column="1"
-                        android:layout_weight="1" />
+                        </TextView>
+                    </TableRow>
 
-                    <TextView
-                        android:id="@+id/runs2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="fill_parent"
-                        android:textColor="#87ceeb"
-                        android:layout_column="2"
-                        android:layout_weight="1" />
+                    <TableRow
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:paddingLeft="4dp"
+                        android:paddingRight="8dp"
+                        android:stretchColumns="1">
 
-                    <TextView
-                        android:id="@+id/balls2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="fill_parent"
-                        android:textColor="#87ceeb"
-                        android:layout_column="1"
-                        android:layout_weight="1" />
+                        <TextView
+                            android:id="@+id/Batsmen"
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:layout_column="1"
+                            android:layout_weight="1"
+                            android:text="Batsmen"
+                            android:textColor="#000" />
 
-                    <TextView
-                        android:id="@+id/six2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="fill_parent"
-                        android:textColor="#87ceeb"
-                        android:layout_column="1"
-                        android:layout_weight="1" />
+                        <TextView
+                            android:layout_width="30dp"
+                            android:layout_height="fill_parent"
+                            android:layout_column="2"
+                            android:layout_weight="1"
+                            android:text="R"
+                            android:textColor="#000" />
 
-                    <TextView
-                        android:id="@+id/four2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="fill_parent"
-                        android:textColor="#87ceeb"
-                        android:layout_column="1"
-                        android:layout_weight="1" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:layout_column="1"
+                            android:layout_weight="1"
+                            android:text="B"
+                            android:textColor="#000" />
 
-                    <TextView
-                        android:id="@+id/sr2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="fill_parent"
-                        android:textColor="#87ceeb"
-                        android:layout_column="1"
-                        android:layout_weight="1" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:layout_column="1"
+                            android:layout_weight="1"
+                            android:text="6's"
+                            android:textColor="#000" />
 
-                </TableRow>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:layout_column="1"
+                            android:layout_weight="1"
+                            android:text="4's"
+                            android:textColor="#000" />
 
-                <TableRow android:layout_width="0dp">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:layout_column="1"
+                            android:layout_weight="1"
+                            android:text="SR"
+                            android:textColor="#000" />
 
-                    <TextView>
+                    </TableRow>
 
-                    </TextView>
-                </TableRow>
+                    <TableRow
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:paddingLeft="4dp"
+                        android:paddingRight="4dp"
+                        android:stretchColumns="1">
 
-                <TableRow
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:paddingLeft="4dp"
-                    android:paddingRight="4dp"
-                    android:stretchColumns="1">
+                        <TextView
+                            android:id="@+id/Batsman1"
+                            android:layout_width="80dp"
+                            android:layout_height="fill_parent"
+                            android:layout_column="1"
+                            android:layout_weight="1"
+                            android:text="Batsmen1"
+                            android:textColor="#ffa500" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="fill_parent"
-                        android:layout_column="1"
-                        android:textColor="#000"
-                        android:layout_weight="1"
-                        android:text="Bowler" />
+                        <TextView
+                            android:id="@+id/runs1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_column="2"
+                            android:layout_weight="1"
+                            android:text="Runs1"
+                            android:textColor="#87ceeb" />
 
-                    <TextView
+                        <TextView
+                            android:id="@+id/balls1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:layout_column="1"
+                            android:layout_weight="1"
+                            android:text="Balls1"
+                            android:textColor="#87ceeb" />
 
-                        android:layout_width="wrap_content"
-                        android:layout_height="fill_parent"
-                        android:layout_column="2"
-                        android:textColor="#000"
-                        android:layout_weight="1"
-                        android:text="O" />
+                        <TextView
+                            android:id="@+id/six1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:layout_column="1"
+                            android:layout_weight="1"
+                            android:text="6's"
+                            android:textColor="#87ceeb" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="fill_parent"
-                        android:textColor="#000"
-                        android:layout_column="1"
-                        android:layout_weight="1"
-                        android:text="M" />
+                        <TextView
+                            android:id="@+id/four1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:layout_column="1"
+                            android:layout_weight="1"
+                            android:text="4's"
+                            android:textColor="#87ceeb" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="fill_parent"
-                        android:textColor="#000"
-                        android:layout_column="1"
-                        android:layout_weight="1"
-                        android:text="R" />
+                        <TextView
+                            android:id="@+id/sr1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:layout_column="1"
+                            android:layout_weight="1"
+                            android:text="SR1"
+                            android:textColor="#87ceeb" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="fill_parent"
-                        android:textColor="#000"
-                        android:layout_column="1"
-                        android:layout_weight="1"
-                        android:text="W" />
+                    </TableRow>
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="fill_parent"
-                        android:textColor="#000"
-                        android:layout_column="1"
-                        android:layout_weight="1"
-                        android:text="ER" />
+                    <TableRow
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:paddingLeft="4dp"
+                        android:paddingRight="4dp"
+                        android:stretchColumns="1">
 
-                </TableRow>
+                        <TextView
+                            android:id="@+id/Batsmen2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:layout_column="1"
+                            android:layout_weight="1"
+                            android:textColor="#ffa500" />
 
-                <TableRow
-                    android:layout_width="fill_parent"
-                    android:layout_height="match_parent"
-                    android:paddingLeft="4dp"
-                    android:paddingRight="4dp"
-                    android:stretchColumns="1">
+                        <TextView
+                            android:id="@+id/runs2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:layout_column="2"
+                            android:layout_weight="1"
+                            android:textColor="#87ceeb" />
 
-                    <TextView
-                        android:id="@+id/Bowler"
-                        android:textColor="#ffa500"
-                        android:layout_width="wrap_content"
-                        android:layout_height="fill_parent"
-                        android:layout_column="1"
-                        android:layout_weight="1"
-                        android:text="Batsmen" />
+                        <TextView
+                            android:id="@+id/balls2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:layout_column="1"
+                            android:layout_weight="1"
+                            android:textColor="#87ceeb" />
 
-                    <TextView
-                        android:id="@+id/overs"
-                        android:layout_width="wrap_content"
-                        android:layout_height="fill_parent"
-                        android:textColor="#87ceeb"
-                        android:layout_column="2"
-                        android:layout_weight="1"
-                        android:text="Runs" />
+                        <TextView
+                            android:id="@+id/six2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:layout_column="1"
+                            android:layout_weight="1"
+                            android:textColor="#87ceeb" />
 
-                    <TextView
-                        android:id="@+id/maidens"
-                        android:layout_width="wrap_content"
-                        android:layout_height="fill_parent"
-                        android:textColor="#87ceeb"
-                        android:layout_column="1"
-                        android:layout_weight="1"
-                        android:text="Balls" />
+                        <TextView
+                            android:id="@+id/four2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:layout_column="1"
+                            android:layout_weight="1"
+                            android:textColor="#87ceeb" />
 
-                    <TextView
-                        android:id="@+id/bruns"
-                        android:layout_width="wrap_content"
-                        android:layout_height="fill_parent"
-                        android:textColor="#87ceeb"
-                        android:layout_column="1"
-                        android:layout_weight="1"
-                        android:text="6's" />
+                        <TextView
+                            android:id="@+id/sr2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:layout_column="1"
+                            android:layout_weight="1"
+                            android:textColor="#87ceeb" />
 
-                    <TextView
-                        android:id="@+id/wickets"
-                        android:layout_width="wrap_content"
-                        android:layout_height="fill_parent"
-                        android:textColor="#87ceeb"
-                        android:layout_column="1"
-                        android:layout_weight="1"
-                        android:text="4's" />
+                    </TableRow>
 
-                    <TextView
-                        android:id="@+id/er1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="fill_parent"
-                        android:textColor="#87ceeb"
-                        android:layout_column="1"
-                        android:layout_weight="1"
-                        android:text="ER1" />
+                    <TableRow android:layout_width="0dp">
 
-                </TableRow>
-            </TableLayout>
-        </LinearLayout>
+                        <TextView>
 
-    </androidx.cardview.widget.CardView>
+                        </TextView>
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:paddingLeft="4dp"
+                        android:paddingRight="4dp"
+                        android:stretchColumns="1">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:layout_column="1"
+                            android:layout_weight="1"
+                            android:text="Bowler"
+                            android:textColor="#000" />
+
+                        <TextView
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:layout_column="2"
+                            android:layout_weight="1"
+                            android:text="O"
+                            android:textColor="#000" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:layout_column="1"
+                            android:layout_weight="1"
+                            android:text="M"
+                            android:textColor="#000" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:layout_column="1"
+                            android:layout_weight="1"
+                            android:text="R"
+                            android:textColor="#000" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:layout_column="1"
+                            android:layout_weight="1"
+                            android:text="W"
+                            android:textColor="#000" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:layout_column="1"
+                            android:layout_weight="1"
+                            android:text="ER"
+                            android:textColor="#000" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="fill_parent"
+                        android:layout_height="match_parent"
+                        android:paddingLeft="4dp"
+                        android:paddingRight="4dp"
+                        android:stretchColumns="1">
+
+                        <TextView
+                            android:id="@+id/Bowler"
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:layout_column="1"
+                            android:layout_weight="1"
+                            android:text="Batsmen"
+                            android:textColor="#ffa500" />
+
+                        <TextView
+                            android:id="@+id/overs"
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:layout_column="2"
+                            android:layout_weight="1"
+                            android:text="Runs"
+                            android:textColor="#87ceeb" />
+
+                        <TextView
+                            android:id="@+id/maidens"
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:layout_column="1"
+                            android:layout_weight="1"
+                            android:text="Balls"
+                            android:textColor="#87ceeb" />
+
+                        <TextView
+                            android:id="@+id/bruns"
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:layout_column="1"
+                            android:layout_weight="1"
+                            android:text="6's"
+                            android:textColor="#87ceeb" />
+
+                        <TextView
+                            android:id="@+id/wickets"
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:layout_column="1"
+                            android:layout_weight="1"
+                            android:text="4's"
+                            android:textColor="#87ceeb" />
+
+                        <TextView
+                            android:id="@+id/er1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:layout_column="1"
+                            android:layout_weight="1"
+                            android:text="ER1"
+                            android:textColor="#87ceeb" />
+
+                    </TableRow>
+                </TableLayout>
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
 
     <ScrollView
 
@@ -418,7 +426,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView"
+        app:layout_constraintTop_toBottomOf="@+id/swipeRefreshCommentary"
         app:layout_constraintVertical_bias="0.056">
 
         <TextView

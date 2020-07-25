@@ -56,6 +56,7 @@ public class CricBuzzParser
 //				System.out.println("in Cricbuzz parser"+u);
 				bufferedReader.close();
 				responseJsonString = responseString.toString();
+				System.out.println(responseJsonString);
 			}finally {
 				urlConnection.disconnect();
 			}
@@ -105,10 +106,12 @@ public class CricBuzzParser
 			JSONArray MatchesList = jo.getJSONArray("matches");
 			int i;
 			int j = MatchesList.length();
+			System.out.println(j+" == j");
 			for(i=0; i< j;i++)
 			{
 				JSONObject individualMatch= MatchesList.getJSONObject(i);
 				Match m = new Match(individualMatch);
+				System.out.println(m);
 				Matches.add(m);
 				String scorecard = m.getScoreCard();
 				//System.out.println(scorecard);

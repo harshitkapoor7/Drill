@@ -168,7 +168,6 @@ public class Match implements Parcelable {
         for (int i = 0; i < InningsToBeSorted.size(); i++) {
             Innings inn = InningsToBeSorted.get(new Integer(i + 1));
             if (inn == null) {
-//new CLog().l("NULL"); continue;
             }
 
             if (Team1.getName() == inn.getName()) {
@@ -189,20 +188,16 @@ public class Match implements Parcelable {
                 cnt2++;
 
             }
-
-//score.append(/*i+1 + ". " + */inn.getName() + " "+ inn.getInnscore() + "/"+ inn.getWickets() + " in " + inn.getOvers() + " overs\n");
         }
         score.append(s1 + "-");
         score.append(s2);
 
-        //faltu
         InningsHashMap = InningsToBeSorted;
         scorecard = score.toString();
-//		System.out.println(scorecard);
     }
 
     public HashMap<Integer, Innings> getInnings() {
-        return InningsHashMap; //use getInnings in your RecyclerView to get Innings and
+        return InningsHashMap;
     }
 
     private Boolean isMatchStarted() {

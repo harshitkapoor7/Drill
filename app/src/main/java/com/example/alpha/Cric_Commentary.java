@@ -14,6 +14,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.text.HtmlCompat;
 import androidx.fragment.app.Fragment;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -22,10 +23,11 @@ import org.json.JSONObject;
 import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Cric_Commentary extends Fragment implements Serializable {
+public class Cric_Commentary extends Fragment implements Serializable, SwipeRefreshLayout.OnRefreshListener {
     Match m;
     TextView sv, bat1n, bat2n, bowln, bat1r, bat2r, bat16, bat14, bat1b, bat1sr, bat26, bat24, bat2b, bat2sr, bowlo, bowlr, bowlm, bowlw, bowle;
     TextView score, Status, ps, crr;
+    SwipeRefreshLayout swipeRefreshLayout;
 
     @Nullable
     @Override
@@ -55,9 +57,12 @@ public class Cric_Commentary extends Fragment implements Serializable {
         bowlw = view.findViewById(R.id.wickets);
         bowle = view.findViewById(R.id.er1);
 
-        String match_id = m.getMatchID();
-        String url = "http://mapps.cricbuzz.com/cbzios/match/" + match_id + "/commentary";
-        data_fetcher(" ");
+
+        swipeRefreshLayout=view.findViewById(R.id.swipeRefreshCommentary);
+        swipeRefreshLayout.setOnRefreshListener(this);
+        swipeRefreshLayout.setColorSchemeResources(R.color.black);
+
+        onLoadingSwipeRefresh();
 
 
 //        Commentary com=m.getCommentary();
@@ -81,6 +86,7 @@ public class Cric_Commentary extends Fragment implements Serializable {
 
             protected void onPreExecute() {
                 super.onPreExecute();
+                swipeRefreshLayout.setRefreshing(true);
 //                view.setVisibility(View.VISIBLE);
             }
 
@@ -197,11 +203,13 @@ public class Cric_Commentary extends Fragment implements Serializable {
                     e.printStackTrace();
                 }
                 String[] lines = string_functions.split_Score(comm[0]);
+                sv.setText("");
                 //System.out.println(HtmlCompat.fromHtml(comm[0], 0));
                 for (int i = 0; i < lines.length; i++) {
                     sv.append("\n\n");
                     sv.append(HtmlCompat.fromHtml(lines[i], 0));
                 }
+                swipeRefreshLayout.setRefreshing(false);
 
 //                view.setVisibility(View.GONE);
             }
@@ -214,4 +222,17 @@ public class Cric_Commentary extends Fragment implements Serializable {
         this.m = m;
     }
 
+    @Override
+    public void onRefresh() {
+        data_fetcher(" ");
+    }
+
+    private void onLoadingSwipeRefresh() {
+        swipeRefreshLayout.post(new Runnable() {
+            @Override
+            public void run() {
+                data_fetcher(" ");
+            }
+        });
+    }
 }

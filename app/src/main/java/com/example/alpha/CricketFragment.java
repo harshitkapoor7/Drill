@@ -18,6 +18,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.PagerSnapHelper;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.SnapHelper;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.blongho.country_data.World;
 
@@ -39,9 +40,10 @@ import java.util.TreeMap;
 import static com.example.alpha.string_functions.isStarted;
 import static com.example.alpha.string_functions.split_Score;
 
-public class CricketFragment extends Fragment {
+public class CricketFragment extends Fragment implements SwipeRefreshLayout.OnRefreshListener {
     ProgressBar progressBar;
     ArrayList<Cricket_live_scores> cls = new ArrayList<>();
+    SwipeRefreshLayout swipeRefreshLayout;
 
     @Nullable
     @Override
@@ -49,7 +51,6 @@ public class CricketFragment extends Fragment {
         View view = inflater.inflate(R.layout.main_page, container, false);
         World.init(getContext());
         progressBar = view.findViewById(R.id.progress);
-        data_fetcher("https://mapps/cricbuzz.com/match/livematches", progressBar);
         return view;
     }
 
@@ -60,7 +61,9 @@ public class CricketFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         recyclerView = (RecyclerView) view.findViewById(R.id.recyclerView);
-
+        swipeRefreshLayout=view.findViewById(R.id.refreshCricket);
+        swipeRefreshLayout.setOnRefreshListener(this);
+        swipeRefreshLayout.setColorSchemeResources(R.color.black);
 
         LinearLayoutManager RecyclerViewLayoutManager = new LinearLayoutManager(getActivity().getApplicationContext());
         recyclerView.setLayoutManager(RecyclerViewLayoutManager);
@@ -68,6 +71,7 @@ public class CricketFragment extends Fragment {
         recyclerView.setLayoutManager(HorizontalLayout);
         SnapHelper linearSnapHelper = new PagerSnapHelper();
         linearSnapHelper.attachToRecyclerView(recyclerView);
+        onLoadingSwipeRefresh();
 
     }
 
@@ -80,6 +84,7 @@ public class CricketFragment extends Fragment {
             protected void onPreExecute() {
                 super.onPreExecute();
                 view.setVisibility(View.VISIBLE);
+                swipeRefreshLayout.setRefreshing(true);
             }
 
             @Override
@@ -87,8 +92,10 @@ public class CricketFragment extends Fragment {
                 CricBuzzParser cbp = new CricBuzzParser("http://mapps.cricbuzz.com/cbzios/match/livematches");
                 cbp.RetrieveURL();
                 cbp.Parse();
+				cls.clear();
 
                 ArrayList<Match> alm = cbp.getMatches();
+                System.out.println("Matches count = "+ alm.size());
                 for (Match m :
                         alm) {
                     String t1 = "";
@@ -117,9 +124,24 @@ public class CricketFragment extends Fragment {
                 Custom_adapter myadapter = new Custom_adapter(cls);
                 recyclerView.setAdapter(myadapter);
                 view.setVisibility(View.GONE);
+                swipeRefreshLayout.setRefreshing(false);
             }
         }
         data_fetch data_fetch = new data_fetch();
         data_fetch.execute();
+    }
+
+    @Override
+    public void onRefresh() {
+        data_fetcher("https://mapps/cricbuzz.com/match/livematches", progressBar);
+    }
+
+    private void onLoadingSwipeRefresh() {
+        swipeRefreshLayout.post(new Runnable() {
+            @Override
+            public void run() {
+                data_fetcher("https://mapps/cricbuzz.com/match/livematches", progressBar);
+            }
+        });
     }
 }
