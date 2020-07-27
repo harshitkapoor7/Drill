@@ -67,14 +67,14 @@ public class MainActivity extends AppCompatActivity {
 
                                 if (getSupportFragmentManager().findFragmentByTag("C") == null) {
                                     getSupportFragmentManager().beginTransaction().add(R.id.fragment, selectedFragment, "C").commit();
-                                    if (getSupportFragmentManager().findFragmentByTag("F") != null)
-                                        getSupportFragmentManager().beginTransaction().hide(getSupportFragmentManager().findFragmentByTag("F")).commit();
+//                                    if (getSupportFragmentManager().findFragmentByTag("F") != null)
+//                                        getSupportFragmentManager().beginTransaction().hide(getSupportFragmentManager().findFragmentByTag("F")).commit();
                                     if (getSupportFragmentManager().findFragmentByTag("N") != null)
                                         getSupportFragmentManager().beginTransaction().hide(getSupportFragmentManager().findFragmentByTag("N")).commit();
                                 } else {
                                     getSupportFragmentManager().beginTransaction().show(getSupportFragmentManager().findFragmentByTag("C")).commit();
-                                    if (getSupportFragmentManager().findFragmentByTag("F") != null)
-                                        getSupportFragmentManager().beginTransaction().hide(getSupportFragmentManager().findFragmentByTag("F")).commit();
+//                                    if (getSupportFragmentManager().findFragmentByTag("F") != null)
+//                                        getSupportFragmentManager().beginTransaction().hide(getSupportFragmentManager().findFragmentByTag("F")).commit();
                                     if (getSupportFragmentManager().findFragmentByTag("N") != null)
                                         getSupportFragmentManager().beginTransaction().hide(getSupportFragmentManager().findFragmentByTag("N")).commit();
                                 }
@@ -82,43 +82,43 @@ public class MainActivity extends AppCompatActivity {
                             }
 
                             break;
-                            case R.id.nav_football: {
-
-
-                                selectedFragment = new FootballFragment();
-                                if (getSupportFragmentManager().findFragmentByTag("F") == null) {
-                                    getSupportFragmentManager().beginTransaction().add(R.id.fragment, selectedFragment, "F").commit();
-                                    if (getSupportFragmentManager().findFragmentByTag("N") != null)
-                                        getSupportFragmentManager().beginTransaction().hide(getSupportFragmentManager().findFragmentByTag("N")).commit();
-                                    if (getSupportFragmentManager().findFragmentByTag("C") != null) {
-                                        System.out.println("hum aaye yaha");
-                                        getSupportFragmentManager().beginTransaction().hide(getSupportFragmentManager().findFragmentByTag("C")).commit();
-
-                                    }
-                                } else {
-                                    getSupportFragmentManager().beginTransaction().show(getSupportFragmentManager().findFragmentByTag("F")).commit();
-                                    if (getSupportFragmentManager().findFragmentByTag("N") != null)
-                                        getSupportFragmentManager().beginTransaction().hide(getSupportFragmentManager().findFragmentByTag("N")).commit();
-                                    if (getSupportFragmentManager().findFragmentByTag("C") != null) {
-                                        System.out.println("hum aaye yaha");
-                                        getSupportFragmentManager().beginTransaction().hide(getSupportFragmentManager().findFragmentByTag("C")).commit();
-                                    }
-                                }
-
-                            }
-                            break;
+//                            case R.id.nav_football: {
+//
+//
+//                                selectedFragment = new FootballFragment();
+//                                if (getSupportFragmentManager().findFragmentByTag("F") == null) {
+//                                    getSupportFragmentManager().beginTransaction().add(R.id.fragment, selectedFragment, "F").commit();
+//                                    if (getSupportFragmentManager().findFragmentByTag("N") != null)
+//                                        getSupportFragmentManager().beginTransaction().hide(getSupportFragmentManager().findFragmentByTag("N")).commit();
+//                                    if (getSupportFragmentManager().findFragmentByTag("C") != null) {
+//                                        System.out.println("hum aaye yaha");
+//                                        getSupportFragmentManager().beginTransaction().hide(getSupportFragmentManager().findFragmentByTag("C")).commit();
+//
+//                                    }
+//                                } else {
+//                                    getSupportFragmentManager().beginTransaction().show(getSupportFragmentManager().findFragmentByTag("F")).commit();
+//                                    if (getSupportFragmentManager().findFragmentByTag("N") != null)
+//                                        getSupportFragmentManager().beginTransaction().hide(getSupportFragmentManager().findFragmentByTag("N")).commit();
+//                                    if (getSupportFragmentManager().findFragmentByTag("C") != null) {
+//                                        System.out.println("hum aaye yaha");
+//                                        getSupportFragmentManager().beginTransaction().hide(getSupportFragmentManager().findFragmentByTag("C")).commit();
+//                                    }
+//                                }
+//
+//                            }
+//                            break;
                             case R.id.nav_news: {
                                 selectedFragment = new NewsFragment();
                                 if (getSupportFragmentManager().findFragmentByTag("N") == null) {
                                     getSupportFragmentManager().beginTransaction().add(R.id.fragment, selectedFragment, "N").commit();
-                                    if (getSupportFragmentManager().findFragmentByTag("F") != null)
-                                        getSupportFragmentManager().beginTransaction().hide(getSupportFragmentManager().findFragmentByTag("F")).commit();
+//                                    if (getSupportFragmentManager().findFragmentByTag("F") != null)
+//                                        getSupportFragmentManager().beginTransaction().hide(getSupportFragmentManager().findFragmentByTag("F")).commit();
                                     if (getSupportFragmentManager().findFragmentByTag("C") != null)
                                         getSupportFragmentManager().beginTransaction().hide(getSupportFragmentManager().findFragmentByTag("C")).commit();
                                 } else {
                                     getSupportFragmentManager().beginTransaction().show(getSupportFragmentManager().findFragmentByTag("N")).commit();
-                                    if (getSupportFragmentManager().findFragmentByTag("F") != null)
-                                        getSupportFragmentManager().beginTransaction().hide(getSupportFragmentManager().findFragmentByTag("F")).commit();
+//                                    if (getSupportFragmentManager().findFragmentByTag("F") != null)
+//                                        getSupportFragmentManager().beginTransaction().hide(getSupportFragmentManager().findFragmentByTag("F")).commit();
                                     if (getSupportFragmentManager().findFragmentByTag("C") != null)
                                         getSupportFragmentManager().beginTransaction().hide(getSupportFragmentManager().findFragmentByTag("C")).commit();
                                 }

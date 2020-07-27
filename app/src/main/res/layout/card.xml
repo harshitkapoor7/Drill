@@ -18,12 +18,22 @@
         <LinearLayout
             android:id="@+id/team1"
             android:layout_width="match_parent"
-            android:layout_height="33dp"
+            android:layout_height="match_parent"
             android:layout_weight="1"
-
-            android:gravity="right"
+            android:gravity="center"
             android:orientation="horizontal"
             android:padding="10sp">
+
+            <TextView
+                android:id="@+id/t1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="TextView"
+                android:textAllCaps="true"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                app:fontFamily="@font/mm" />
 
 
         </LinearLayout>
@@ -31,9 +41,8 @@
         <LinearLayout
             android:id="@+id/team2"
             android:layout_width="match_parent"
-            android:layout_height="177dp"
+            android:layout_height="match_parent"
             android:layout_weight="1"
-
             android:gravity="center"
             android:orientation="horizontal"
             android:padding="10sp">
@@ -41,12 +50,12 @@
 
             <TextView
                 android:id="@+id/t2"
-                android:layout_width="107dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:gravity="center"
                 android:text="TextView"
                 android:textAllCaps="true"
                 android:textColor="#000000"
-                android:gravity="center"
                 android:textSize="18sp"
                 app:fontFamily="@font/mm" />
         </LinearLayout>
@@ -59,15 +68,6 @@
             android:gravity="center"
             android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/t1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="TextView"
-                android:textAllCaps="true"
-                android:textColor="#000000"
-                android:textSize="18sp"
-                app:fontFamily="@font/mm" />
 
         </LinearLayout>
 
@@ -75,14 +75,15 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:gravity="center_vertical"
+            android:gravity="center"
             android:orientation="horizontal"
-            android:visibility="visible">
+            android:visibility="visible"
+            android:layout_marginBottom="10dp">
 
             <TextView
                 android:id="@+id/description"
                 android:layout_width="wrap_content"
-                android:layout_height="28dp"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center_horizontal"
                 android:text="TextView"

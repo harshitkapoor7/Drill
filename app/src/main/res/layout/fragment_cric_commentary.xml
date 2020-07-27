@@ -38,10 +38,8 @@
 
                     <TextView
                         android:id="@+id/Status"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_column="1"
-                        android:layout_weight="1"
+                        android:layout_width="255dp"
+                        android:layout_height="wrap_content"
                         android:fontFamily="@font/mm"
                         android:text="Status"
                         android:textColor="#87ceeb" />
@@ -50,8 +48,6 @@
                         android:id="@+id/Partnership"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_column="2"
-                        android:layout_weight="1"
                         android:fontFamily="@font/mbold"
                         android:gravity="right"
                         android:text="PS"
