@@ -10,7 +10,7 @@
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
         android:id="@+id/swipeRefreshCommentary"
         android:layout_width="match_parent"
-        android:layout_height="220dp"
+        android:layout_height="240dp"
         tools:ignore="MissingConstraints">
 
         <androidx.cardview.widget.CardView
