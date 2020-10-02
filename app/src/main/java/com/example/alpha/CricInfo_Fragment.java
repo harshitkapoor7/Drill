@@ -143,14 +143,10 @@ public class CricInfo_Fragment extends Fragment implements Serializable {
                         t1=squad[0];
 
                         int j=0,i=1;
-                        while(squad[i]!="SPLIT")
-                        {
+                        while(squad[i]!="SPLIT") {
                             squad1.add(squad[i]);
                             i++;
-
                         }
-
-
                         i++;
                         t2=squad[i];
                         i++;
@@ -194,7 +190,6 @@ public class CricInfo_Fragment extends Fragment implements Serializable {
                 System.out.println("yaha");
                 String[] details=new String[8];
                 details[0]=(des1);
-
                 details[1]=(series1);
                 details[2]=(toss1);
                 details[3]=(stadium1);

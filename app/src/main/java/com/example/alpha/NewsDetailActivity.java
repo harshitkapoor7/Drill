@@ -3,7 +3,6 @@ package com.example.alpha;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -74,10 +73,8 @@ public class NewsDetailActivity extends AppCompatActivity implements AppBarLayou
         time.setText(mSource+ author + " \u2022 "+ Utils.DateToTimeFormat(mDate));
         initWebView(mUrl);
 
-
-
-
     }
+
     private void initWebView(String url){
         WebView webView=findViewById(R.id.webView);
         webView.getSettings().setLoadsImagesAutomatically(true);

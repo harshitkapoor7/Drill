@@ -88,7 +88,6 @@ public class CricBuzzParser
 			System.out.println(e.getMessage());
 			return null;
 		}
-
 	}
 	public void putResult(String result)
 	{

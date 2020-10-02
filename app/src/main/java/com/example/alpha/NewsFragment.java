@@ -95,6 +95,7 @@ public class NewsFragment extends Fragment implements SwipeRefreshLayout.OnRefre
             }
         });
     }
+    
      private  void initListener(){
         adapter.setOnItemClickListener(new Adapter.OnItemClickListener() {
             @Override

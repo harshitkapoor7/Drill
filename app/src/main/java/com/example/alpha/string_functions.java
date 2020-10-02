@@ -1,11 +1,10 @@
 package com.example.alpha;
-
 public class string_functions {
     public static String[] split_Score(String data) {
         String[] str = data.split("\n",-2);
         return str;
     }
-
+    
     public static int isStarted(String[] teams) {
         for (int i = 0; i < 2; i++) {
             for (int j = 0; j < teams[i].length(); j++) {

@@ -38,6 +38,5 @@ public class Info {
         for (int i = 0; i < l2; i++)
             squad_team1[j++] = playerid.get(sq2.getInt(i));
         return squad_team1;
-
     }
 }
